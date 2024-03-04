@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bas4bnnx2in00"]
+[gd_scene load_steps=6 format=3 uid="uid://bas4bnnx2in00"]
 
 [ext_resource type="Script" path="res://characters/character.gd" id="1_i05ex"]
 [ext_resource type="Script" path="res://characters/character_camera.gd" id="2_3u2uj"]
 [ext_resource type="Script" path="res://characters/character_body.gd" id="2_u72s6"]
+[ext_resource type="Material" uid="uid://refhhcydnkus" path="res://resources/materials/based_outline.tres" id="4_om8ji"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ls7p2"]
+material = ExtResource("4_om8ji")
 
 [node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("_body", "_camera_offset")]
 script = ExtResource("1_i05ex")
@@ -21,3 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 spring_length = 5.0
 
 [node name="Camera" type="Camera3D" parent="ThirdPersonCamera/Offset"]
+
+[node name="PostProcessing" type="MeshInstance3D" parent="ThirdPersonCamera/Offset/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.35)
+mesh = SubResource("QuadMesh_ls7p2")

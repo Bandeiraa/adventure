@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://refhhcydnkus"]
+
+[ext_resource type="Shader" path="res://resources/shaders/based_outline.gdshader" id="1_d04sb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_d04sb")
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_thickness = 2.0
